@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Future Imperfect</title>
+    <link>/</link>
+    <description>Recent content on Hugo Future Imperfect</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 22 Jun 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fancy App 1</title>
+      <link>/itemized/item1/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item1/</guid>
+      <description> App 1 </description>
+    </item>
+    
+    <item>
+      <title>Fancy App 2</title>
+      <link>/itemized/item2/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item2/</guid>
+      <description> App 2 </description>
+    </item>
+    
+    <item>
+      <title>Fancy App 3</title>
+      <link>/itemized/item3/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item3/</guid>
+      <description> App 3 </description>
+    </item>
+    
+    <item>
+      <title>Fancy App 4</title>
+      <link>/itemized/item4/</link>
+      <pubDate>Thu, 22 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/itemized/item4/</guid>
+      <description> App 4 </description>
+    </item>
+    
+    <item>
+      <title>Hello R Markdown</title>
+      <link>/blog/2015-07-23-r-rmarkdown/</link>
+      <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
+      
+      <guid>/blog/2015-07-23-r-rmarkdown/</guid>
+      <description>R MarkdownThis is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
+You can embed an R code chunk like this:
+summary(cars)## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
+    </item>
+    
+    <item>
+      <title>Creating a New Theme</title>
+      <link>/blog/c1/</link>
+      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      
+      <guid>/blog/c1/</guid>
+      <description>前言這次要和大家分享的是，以在學界知名的「效率前緣」為核心概念所建構的「優勢選股策略」，核心概念是靠著觀察風險與報酬的關係，簡單選出高CP值的優良股票，不用再做額外的操作。這樣簡單的策略，是否能獲得打贏大盤的績效呢?
+介紹效率前緣「效率前緣」是由學者Markowitz在1952年所提出的現代投資理論中的核心概念之一，該理論於1990年獲頒諾貝爾經濟學獎。「效率前緣」是將市場上可供投資的所有資產，依任意比率組成投資組合後，選擇在相同風險下，擁有最高期望報酬的那些投資組合共同於 期望報酬-風險圖上描繪而成。簡單來說，雖然報酬一定伴隨風險，但選擇效率前緣上方的投資組合，就是選擇了該風險水平下，預期報酬最高的投資組合。
+介紹優勢策略選股
+本投資策略跟隨「效率前緣」的精神，尋找市場中「優勢」的股票，優勢定義為以下兩點：
+相同期望報酬中，風險最低。相同風險下，期望報酬最高。以2018年12月份台股上市櫃股票為例，具有「效率前緣」概念的優勢股票即為紅點。觀察可以看到所有的紅點都會是該風險值底下，期望報酬最高的股票，符合我們的要求。
+編號股票代碼股票名稱平均日報酬率日標準差11526日馳0.0330.06222340光磊0.0080.01632401凌陽0.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1535 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "\/"
+        },
+        "articleSection" : "blog",
+        "name" : "Creating a New Theme",
+        "headline" : "Creating a New Theme",
+        "description" : "Learn how to create a theme on Hugo",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2014",
+        "datePublished": "2014-09-28 00:00:00 \x2b0000 UTC",
+        "dateModified" : "2014-09-28 00:00:00 \x2b0000 UTC",
+        "url" : "\/blog\/c1\/",
+        "wordCount" : "147",
+        "keywords" : [ "tutorial","Blog" ]
+    }
+    </script>
+        
+            
+                <title>Creating a New Theme</title>
+            
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.55.2" />
+        
+
+
+        
+            <meta name="author" content="Theme author">
+        
+        
+            <meta name="description" content="Learn how to create a theme on Hugo">
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Creating a New Theme"/>
+<meta name="twitter:description" content="Learn how to create a theme on Hugo"/>
+<meta name="twitter:site" content="@example"/>
+
+        <meta property="og:title" content="Creating a New Theme" />
+<meta property="og:description" content="Learn how to create a theme on Hugo" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/blog/c1/" />
+<meta property="article:published_time" content="2014-09-28T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2014-09-28T00:00:00&#43;00:00"/>
+
+        <meta property="og:image" content="//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        
+<meta itemprop="name" content="Creating a New Theme">
+<meta itemprop="description" content="Learn how to create a theme on Hugo">
+
+
+<meta itemprop="datePublished" content="2014-09-28T00:00:00&#43;00:00" />
+<meta itemprop="dateModified" content="2014-09-28T00:00:00&#43;00:00" />
+<meta itemprop="wordCount" content="147">
+
+
+
+<meta itemprop="keywords" content="tutorial," />
+
+        
+
+        
+            
+        
+
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+            
+                
+            
+        
+
+
+  
+    
+    <link href='//cdn.bootcss.com/highlight.js/9.11.0/styles/github.min.css' rel='stylesheet' type='text/css' />
+  
+
+
+      
+    </head>
+    <body>
+
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/">blog</a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/">
+                            <i class="fa fa-home">&nbsp;</i>Home
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="fa fa-id-card-o">&nbsp;</i>About
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/blog/">
+                            <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/itemized/">
+                            <i class="fa fa-list">&nbsp;</i>Itemized
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/categories/">
+                            <i class="fa fa-sitemap">&nbsp;</i>Categories
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/contact/">
+                            <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                    </a>
+                </li>
+            
+        </ul>
+    </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/">
+                            <h3>
+                                <i class="fa fa-home">&nbsp;</i>Home
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="fa fa-id-card-o">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/blog/">
+                            <h3>
+                                <i class="fa fa-newspaper-o">&nbsp;</i>Blog
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/itemized/">
+                            <h3>
+                                <i class="fa fa-list">&nbsp;</i>Itemized
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories/">
+                            <h3>
+                                <i class="fa fa-sitemap">&nbsp;</i>Categories
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/contact/">
+                            <h3>
+                                <i class="fa fa-envelope-o">&nbsp;</i>Contact
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/blog/c1/">Creating a New Theme</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2014-09-28'>
+                                    September 28, 2014</time>
+                            </header>
+                            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+        
+        
+        
+
+        <a href="/blog/c1/" class="image featured">
+            <img src="/img/2014/09/pic03.jpg" alt="">
+        </a>
+    
+
+
+                        </article>
+                
+
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fc1%2f&amp;text=Creating%20a%20New%20Theme&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fc1%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fc1%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fc1%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fc1%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fc1%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fc1%2f&amp;description=Creating%20a%20New%20Theme" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Theme%20author&amp;body=%2fblog%2fc1%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
+    </section>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/blog/c1/">Creating a New Theme</a></h1>
+            
+        
+        
+            <p>Learn how to create a theme on Hugo</p>
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2014-09-28'>
+            September 28, 2014</time>
+        <span class="author">Theme author</span>
+        
+            <p>1 minute read</p>
+        
+        
+    </div>
+</header>
+
+
+  
+    <section id="social-share">
+      <ul class="icons">
+        
+
+
+
+<li>
+  <a href="//twitter.com/share?url=%2fblog%2fc1%2f&amp;text=Creating%20a%20New%20Theme&amp;via=example" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=%2fblog%2fc1%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=%2fblog%2fc1%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=%2fblog%2fc1%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=%2fblog%2fc1%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=%2fblog%2fc1%2f&amp;title=Creating%20a%20New%20Theme" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=%2fblog%2fc1%2f&amp;description=Creating%20a%20New%20Theme" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by Theme%20author&amp;body=%2fblog%2fc1%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+      </ul>
+    </section>
+  
+
+  
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+        
+        
+        
+
+        <a href="/blog/c1/" class="image featured">
+            <img src="/img/2014/09/pic03.jpg" alt="">
+        </a>
+    
+
+
+  <div id="content">
+    
+<script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<div id="section" class="section level2">
+<h2>前言</h2>
+<p>這次要和大家分享的是，以在學界知名的「效率前緣」為核心概念所建構的「優勢選股策略」，
+核心概念是靠著觀察風險與報酬的關係，簡單選出高CP值的優良股票，不用再做額外的操作。
+這樣簡單的策略，是否能獲得打贏大盤的績效呢?<br /><br /></p>
+</div>
+<div id="section-1" class="section level2">
+<h2>介紹效率前緣</h2>
+<p><img src="C:/Users/USER/OneDrive/108_1/content/effFrontier.png" /></p>
+<p>「效率前緣」是由學者Markowitz在1952年所提出的現代投資理論中的核心概念之一，該理論於1990年獲頒諾貝爾經濟學獎。
+「效率前緣」是將市場上可供投資的所有資產，依任意比率組成投資組合後，選擇在相同風險下，
+擁有最高期望報酬的那些投資組合共同於 期望報酬-風險
+圖上描繪而成。簡單來說，雖然報酬一定伴隨風險，但選擇效率前緣上方的投資組合，
+就是選擇了該風險水平下，預期報酬最高的投資組合。<br /><br /></p>
+</div>
+<div id="section-2" class="section level2">
+<h2>介紹優勢策略選股<br /></h2>
+<p>本投資策略跟隨「效率前緣」的精神，尋找市場中「優勢」的股票，優勢定義為以下兩點：</p>
+<ul>
+<li>相同期望報酬中，風險最低。</li>
+<li>相同風險下，期望報酬最高。</li>
+</ul>
+<p>以2018年12月份台股上市櫃股票為例，具有「效率前緣」概念的優勢股票即為紅點。
+觀察可以看到所有的紅點都會是該風險值底下，期望報酬最高的股票，符合我們的要求。<br /><br /></p>
+<p><img src="/blog/C1_files/figure-html/graph1-1.png" width="672" style="display: block; margin: auto;" /></p>
+<div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:250px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+編號
+</th>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+股票代碼
+</th>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+股票名稱
+</th>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+平均日報酬率
+</th>
+<th style="text-align:center;position: sticky; top:0; background-color: #FFFFFF;">
+日標準差
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+1
+</td>
+<td style="text-align:center;">
+1526
+</td>
+<td style="text-align:center;">
+日馳
+</td>
+<td style="text-align:center;">
+0.033
+</td>
+<td style="text-align:center;">
+0.062
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+2
+</td>
+<td style="text-align:center;">
+2340
+</td>
+<td style="text-align:center;">
+光磊
+</td>
+<td style="text-align:center;">
+0.008
+</td>
+<td style="text-align:center;">
+0.016
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+3
+</td>
+<td style="text-align:center;">
+2401
+</td>
+<td style="text-align:center;">
+凌陽
+</td>
+<td style="text-align:center;">
+0.008
+</td>
+<td style="text-align:center;">
+0.015
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+4
+</td>
+<td style="text-align:center;">
+2404
+</td>
+<td style="text-align:center;">
+漢唐
+</td>
+<td style="text-align:center;">
+0.007
+</td>
+<td style="text-align:center;">
+0.010
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+5
+</td>
+<td style="text-align:center;">
+2444
+</td>
+<td style="text-align:center;">
+兆勁
+</td>
+<td style="text-align:center;">
+0.018
+</td>
+<td style="text-align:center;">
+0.031
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+6
+</td>
+<td style="text-align:center;">
+2845
+</td>
+<td style="text-align:center;">
+遠東銀
+</td>
+<td style="text-align:center;">
+0.002
+</td>
+<td style="text-align:center;">
+0.007
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+7
+</td>
+<td style="text-align:center;">
+2880
+</td>
+<td style="text-align:center;">
+華南金
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+<td style="text-align:center;">
+0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+2889
+</td>
+<td style="text-align:center;">
+國票金
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+<td style="text-align:center;">
+0.005
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+9
+</td>
+<td style="text-align:center;">
+3036
+</td>
+<td style="text-align:center;">
+文曄
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+<td style="text-align:center;">
+0.007
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+10
+</td>
+<td style="text-align:center;">
+4942
+</td>
+<td style="text-align:center;">
+嘉彰
+</td>
+<td style="text-align:center;">
+0.019
+</td>
+<td style="text-align:center;">
+0.032
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+11
+</td>
+<td style="text-align:center;">
+4960
+</td>
+<td style="text-align:center;">
+誠美材
+</td>
+<td style="text-align:center;">
+0.015
+</td>
+<td style="text-align:center;">
+0.024
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+12
+</td>
+<td style="text-align:center;">
+5299
+</td>
+<td style="text-align:center;">
+杰力
+</td>
+<td style="text-align:center;">
+0.026
+</td>
+<td style="text-align:center;">
+0.042
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+13
+</td>
+<td style="text-align:center;">
+5880
+</td>
+<td style="text-align:center;">
+合庫金
+</td>
+<td style="text-align:center;">
+0.001
+</td>
+<td style="text-align:center;">
+0.006
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+14
+</td>
+<td style="text-align:center;">
+6104
+</td>
+<td style="text-align:center;">
+創惟
+</td>
+<td style="text-align:center;">
+0.012
+</td>
+<td style="text-align:center;">
+0.018
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+15
+</td>
+<td style="text-align:center;">
+6116
+</td>
+<td style="text-align:center;">
+彩晶
+</td>
+<td style="text-align:center;">
+0.005
+</td>
+<td style="text-align:center;">
+0.007
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+16
+</td>
+<td style="text-align:center;">
+6180
+</td>
+<td style="text-align:center;">
+橘子
+</td>
+<td style="text-align:center;">
+0.012
+</td>
+<td style="text-align:center;">
+0.023
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+17
+</td>
+<td style="text-align:center;">
+6251
+</td>
+<td style="text-align:center;">
+定穎
+</td>
+<td style="text-align:center;">
+0.013
+</td>
+<td style="text-align:center;">
+0.023
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+18
+</td>
+<td style="text-align:center;">
+8039
+</td>
+<td style="text-align:center;">
+台虹
+</td>
+<td style="text-align:center;">
+0.008
+</td>
+<td style="text-align:center;">
+0.017
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br /><br /></p>
+</div>
+<div id="section-3" class="section level2">
+<h2>策略績效回測 <br /></h2>
+<p>為觀察「優勢」策略選股是否有效，我們測試以台股上市櫃股票為標的，在每月初進選股，標準為依據每檔股票前一個月的平均報酬率及標準差，選出優勢股票建立投資組合。此外，為保證實務上的可行性，本投組僅考慮前一個月平均每日交易量一千張以上的股票，並考慮交易手續費買賣各0.2%。績效如下圖：<br /><br /></p>
+<p><img src="/blog/C1_files/figure-html/graph2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+情境
+</th>
+<th style="text-align:center;">
+累積報酬
+</th>
+<th style="text-align:center;">
+年化報酬率
+</th>
+<th style="text-align:center;">
+年化風險
+</th>
+<th style="text-align:center;">
+夏普比率
+</th>
+<th style="text-align:center;">
+選股勝率
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+優勢策略
+</td>
+<td style="text-align:center;">
+0.897
+</td>
+<td style="text-align:center;">
+0.180
+</td>
+<td style="text-align:center;">
+0.191
+</td>
+<td style="text-align:center;">
+0.882
+</td>
+<td style="text-align:center;">
+0.563
+</td>
+</tr>
+<tr>
+<td style="text-align:center;">
+大盤
+</td>
+<td style="text-align:center;">
+0.237
+</td>
+<td style="text-align:center;">
+0.056
+</td>
+<td style="text-align:center;">
+0.136
+</td>
+<td style="text-align:center;">
+0.338
+</td>
+<td style="text-align:center;">
+<ul>
+<li></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+<p><br /></p>
+<p>結果顯示本策略在2015~2018共四年的回測期間內，優勢策略選股的累積報酬率為89%(年化17%)，
+夏普比率0.88，績效勝於同期間的大盤(累計報酬23%，年化5.6%，夏普比率0.34)。</p>
+<p><br /><br /></p>
+<p>##每期投資檔數<br /></p>
+<p><img src="/blog/C1_files/figure-html/graph3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:center;">
+平均投資檔數
+</th>
+<th style="text-align:center;">
+單期最小投資股票數
+</th>
+<th style="text-align:center;">
+單期最大投資股票數
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center;">
+15.94
+</td>
+<td style="text-align:center;">
+8
+</td>
+<td style="text-align:center;">
+27
+</td>
+</tr>
+</tbody>
+</table>
+<p>本策略會建議投資人以建構約16檔股票投資組合之方式進行投資，目的是分散掉個別股票突發事件造成的個別風險。但值得注意的是，上方的績效表顯示，優勢選股策略選到隔月上漲股票的機率為56%，這表示依照本策略推薦的投資清單，就算只買進其中一檔股票，也僅進行一個月的投資，還是有較高的機率可以獲利的。<br /><br /></p>
+<p>##熱門股<br /></p>
+<p><img src="/blog/C1_files/figure-html/graph4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>觀察回測期間內最常被選到的十檔股票可以發現金融股及電信股很受本策略的歡迎，
+可以歸功於其風險較低的特性。<br /><br /></p>
+<p>##後續延伸<br /><br /></p>
+<p>眼尖的讀者一定有發現到，優勢選股策略績效雖然看起來很棒，但在2018下半年，市場步入空頭，策略投組的跌幅其實是遠高於大盤的，可以說是有點吃老本的狀態。我們將上述狀況以估計投組未來可能最大損失的「最大回撤」圖形表示如下： <br /></p>
+<p><img src="/blog/C1_files/figure-html/graph5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p><br /></p>
+<p>可以看到優勢選股策略選出的投資組合，在高報酬的狀態下，確實也承受了高於大盤的風險，這樣的波動絕對是大家不樂見的。讀者可以想想，是否有能在賺取高獲利同時，降低波動的辦法，答案將在後續的文章中，為各位帶來精闢的解析。<br /><br /></p>
+</div>
+
+  </div>
+
+  <footer>
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+            
+            
+                <i class="fa fa-folder"></i>
+                
+                
+                <li><a class="article-category-link" href="/categories/hugo">Hugo</a></li>
+                
+            
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="/tags/tutorial">tutorial</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
+
+  </footer>
+
+</article>
+
+    <article class="post">
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "shortname" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </article>
+
+
+<ul class="actions pagination">
+    
+
+    
+        <li><a href="/blog/2015-07-23-r-rmarkdown/"
+                class="button big next">Hello R Markdown</a></li>
+    
+</ul>
+
+
+    </div>
+    
+<section id="sidebar">
+
+  
+  <section id="intro">
+    
+    
+      
+        <a href='/' class="logo"><img src="/img/main/logo.jpg" alt="Hugo Future Imperfect" /></a>
+      
+    
+    
+      <header>
+        <h2>Hugo Future Imperfect</h2>
+        <p>Another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i></p>
+      </header>
+    
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jpescador/hugo-future-imperfect" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//flickr.com/photos/example" target="_blank" title="Flickr" class="fa fa-flickr"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/example" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+  <li><a href="//linkedin.com/company/examplebusiness" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/example" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/example" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/example" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+  <li><a href="//pinterest.com/example" target="_blank" title="Pinterest" class="fa fa-pinterest-p"></a></li>
+
+
+
+  <li><a href="//telegram.me/example" target="_blank" title="telegram" class="fa fa-telegram"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//researchgate.net/profile/example" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
+
+
+
+  <li><a href="mailto:example" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/blog/c1/">Creating a New Theme</a>
+              </h3>
+              
+              <time class="published" datetime='2014-09-28'>
+                September 28, 2014
+              </time>
+            </header>
+            
+    
+
+    
+        
+        
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+        
+        
+        
+
+        <a href="/blog/c1/" class="image featured">
+            <img src="/img//pic03.jpg" alt="">
+        </a>
+    
+
+
+          </article>
+        
+      </div>
+
+      
+    </div>
+  </section>
+
+  
+  
+  
+  
+  
+    <section id="categories">
+      <header>
+        <h3>
+          <a href="/categories/">Categories</a>
+        </h3>
+      </header>
+        
+          
+        
+
+        
+        <p>
+          <article>
+            <header>
+              
+                Uncategorized
+                <span style="float:right;">4</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/hugo/">hugo</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+        <p>
+          <article>
+            <header>
+              
+                <a href="/categories/r/">r</a>
+                <span style="float:right;">1</span>
+              
+            </header>
+          </article>
+        </p>
+        
+    </section>
+  
+  
+
+  
+  
+    <section id="mini-bio">
+      <h3>About</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris.</p>
+      <a href="/about/" class="button">Learn More</a>
+    </section>
+  
+
+  
+  <section id="footer">
+    
+      <ul class="icons">
+        
+          
+    <li><a href="/index.xml" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a></li>
+
+
+        
+        
+  <li><a href="//github.com/jpescador/hugo-future-imperfect" target="_blank" title="GitHub" class="fa fa-github"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//flickr.com/photos/example" target="_blank" title="Flickr" class="fa fa-flickr"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//linkedin.com/in/example" target="_blank" title="LinkedIn" class="fa fa-linkedin"></a></li>
+
+
+
+  <li><a href="//linkedin.com/company/examplebusiness" target="_blank" title="LinkedIn Company" class="fa fa-linkedin"></a></li>
+
+
+
+
+
+
+
+
+
+  <li><a href="//facebook.com/example" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+
+
+
+
+
+  <li><a href="//reddit.com/user/example" target="_blank" title="Reddit" class="fa fa-reddit"></a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li><a href="//instagram.com/example" target="_blank" title="Instagram" class="fa fa-instagram"></a></li>
+
+
+
+
+
+  <li><a href="//twitter.com/example" target="_blank" title="Twitter" class="fa fa-twitter"></a></li>
+
+
+
+
+
+
+
+  <li><a href="//pinterest.com/example" target="_blank" title="Pinterest" class="fa fa-pinterest-p"></a></li>
+
+
+
+  <li><a href="//telegram.me/example" target="_blank" title="telegram" class="fa fa-telegram"></a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="//researchgate.net/profile/example" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
+
+
+
+  <li><a href="mailto:example" title="Email" class="fa fa-envelope"></a></li>
+
+
+      </ul>
+    
+    <p class="copyright">
+      
+        &copy; 2017
+        
+          Hugo Future Imperfect
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js"></script>
+        
+        
+        
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/r.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/yaml.min.js"></script>
+        <script src="//cdn.bootcss.com/highlight.js/9.11.0/languages/css.min.js"></script>
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+      
+        
+      
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
+</html>
+
